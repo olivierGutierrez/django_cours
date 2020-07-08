@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% if liste%}
+  {% block title %}
+    <h3>List of programs</h3>
+  {% endblock %}
+
+  {% block content %}
+    {% for cursus in liste %}
+    <div class="container">
+      <div class="row">
+        <div class = "col-sm-2">
+      <a href="/lycee/{{cursus.id }}">{{cursus.name}}</a>
+    </div>
+      
+    {% endfor %}
+  {% endblock %}
+{% else %}
+  <p> No cursus to show .</p>
+
+{% endif %}
+
